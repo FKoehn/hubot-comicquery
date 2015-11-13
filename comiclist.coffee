@@ -22,8 +22,8 @@ url_source=
   vertigo: 'http://www.vertigocomics.com'
   search: '/browse?content_type={type}&date={date_from}&date_end={date_to}&keyword={key}'
 
-get_url = (puplisher, obj) ->
-  url = url_source[puplisher]+url_source.search
+get_url = (publisher, obj) ->
+  url = url_source[publisher]+url_source.search
   return url.format obj
 
 prepare_key = (key) ->
