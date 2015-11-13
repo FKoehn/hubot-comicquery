@@ -26,9 +26,7 @@ get_url = (puplisher, obj) ->
   url = url_source[puplisher]+url_source.search
   return url.format obj
 
-prepare_key = (key) ->
-  key.replace ' ', '+'
-  return '"'+key+'"'
+prepare_key = (key) -> '"' + (key.replace /\s+/g, '+') + '"'
 
 get_results = (robot, puplisher, search_options, cb) ->
   robot.http(get_url(puplisher, search_options)).get() (err, res, body) ->
